@@ -1,0 +1,215 @@
+### Swift dependencies file v0 ###
+provides-top-level:
+- "CalculatorBrain"
+provides-nominal:
+- "V13LavCalculator15CalculatorBrain"
+- "OV13LavCalculator15CalculatorBrain10Operations"
+- "VV13LavCalculator15CalculatorBrain22PendingBinaryOperation"
+provides-member:
+- ["V13LavCalculator15CalculatorBrain", ""]
+- ["OV13LavCalculator15CalculatorBrain10Operations", ""]
+- ["VV13LavCalculator15CalculatorBrain22PendingBinaryOperation", ""]
+provides-dynamic-lookup:
+depends-top-level:
+- !private "!="
+- !private "&&"
+- "*"
+- "+"
+- !private "+="
+- "-"
+- "AssignmentPrecedence"
+- "Bool"
+- "BooleanLiteralType"
+- "CalculatorBrain"
+- "Dictionary"
+- "Double"
+- "String"
+- "StringLiteralType"
+- "UnicodeScalarType"
+- "sqrt"
+depends-member:
+- ["Ps16AbsoluteValuable", "pi"]
+- ["Ps9AnyObject", "init"]
+- ["Ps19BinaryFloatingPoint", "pi"]
+- !private ["Sb", "_getBuiltinLogicValue"]
+- ["Ps7CVarArg", "init"]
+- ["Ps7CVarArg", "pi"]
+- !private ["Ps7CVarArg", "subscript"]
+- ["V13LavCalculator15CalculatorBrain", "Bool"]
+- ["V13LavCalculator15CalculatorBrain", "Dictionary"]
+- ["V13LavCalculator15CalculatorBrain", "Double"]
+- ["V13LavCalculator15CalculatorBrain", "Operations"]
+- ["V13LavCalculator15CalculatorBrain", "PendingBinaryOperation"]
+- ["V13LavCalculator15CalculatorBrain", "String"]
+- ["V13LavCalculator15CalculatorBrain", "accumulator"]
+- !private ["V13LavCalculator15CalculatorBrain", "descHelper"]
+- ["V13LavCalculator15CalculatorBrain", "description"]
+- ["V13LavCalculator15CalculatorBrain", "init"]
+- ["V13LavCalculator15CalculatorBrain", "operation"]
+- ["V13LavCalculator15CalculatorBrain", "pbo"]
+- ["V13LavCalculator15CalculatorBrain", "performOperation"]
+- ["V13LavCalculator15CalculatorBrain", "result"]
+- !private ["V13LavCalculator15CalculatorBrain", "resultIsPending"]
+- ["V13LavCalculator15CalculatorBrain", "setOperand"]
+- ["V13LavCalculator15CalculatorBrain", "sqrt"]
+- !private ["Ps10Collection", "subscript"]
+- ["Ps10Comparable", "init"]
+- ["Ps10Comparable", "pi"]
+- ["Ps28CustomDebugStringConvertible", "init"]
+- ["Ps28CustomDebugStringConvertible", "pi"]
+- !private ["Ps28CustomDebugStringConvertible", "subscript"]
+- !private ["Ps29CustomPlaygroundQuickLookable", "_getBuiltinLogicValue"]
+- ["Ps29CustomPlaygroundQuickLookable", "init"]
+- ["Ps29CustomPlaygroundQuickLookable", "pi"]
+- !private ["Ps17CustomReflectable", "_getBuiltinLogicValue"]
+- ["Ps17CustomReflectable", "init"]
+- ["Ps17CustomReflectable", "pi"]
+- !private ["Ps17CustomReflectable", "subscript"]
+- !private ["Ps23CustomStringConvertible", "_getBuiltinLogicValue"]
+- ["Ps23CustomStringConvertible", "init"]
+- ["Ps23CustomStringConvertible", "pi"]
+- !private ["Ps23CustomStringConvertible", "subscript"]
+- !private ["Vs10Dictionary", "subscript"]
+- ["Sd", "pi"]
+- !private ["Ps9Equatable", "_getBuiltinLogicValue"]
+- ["Ps9Equatable", "init"]
+- ["Ps9Equatable", "pi"]
+- !private ["Ps27ExpressibleByBooleanLiteral", "_getBuiltinLogicValue"]
+- !private ["Ps30ExpressibleByDictionaryLiteral", "subscript"]
+- ["Ps43ExpressibleByExtendedGraphemeClusterLiteral", "init"]
+- ["Ps25ExpressibleByFloatLiteral", "pi"]
+- ["Ps27ExpressibleByIntegerLiteral", "pi"]
+- ["Ps26ExpressibleByStringLiteral", "init"]
+- ["Ps33ExpressibleByUnicodeScalarLiteral", "init"]
+- ["Ps13FloatingPoint", "pi"]
+- !private ["Ps8Hashable", "_getBuiltinLogicValue"]
+- ["Ps8Hashable", "init"]
+- ["Ps8Hashable", "pi"]
+- !private ["Ps25LosslessStringConvertible", "_getBuiltinLogicValue"]
+- ["Ps25LosslessStringConvertible", "init"]
+- ["Ps25LosslessStringConvertible", "pi"]
+- ["Ps10MirrorPath", "init"]
+- ["PSo8NSCoding", "init"]
+- ["PSo9NSCopying", "init"]
+- ["PSo16NSMutableCopying", "init"]
+- ["PSo16NSObjectProtocol", "init"]
+- ["PSo14NSSecureCoding", "init"]
+- ["CSo8NSString", "init"]
+- ["OV13LavCalculator15CalculatorBrain10Operations", "Double"]
+- ["OV13LavCalculator15CalculatorBrain10Operations", "String"]
+- ["OV13LavCalculator15CalculatorBrain10Operations", "binaryOperation"]
+- ["OV13LavCalculator15CalculatorBrain10Operations", "constant"]
+- ["OV13LavCalculator15CalculatorBrain10Operations", "equals"]
+- ["OV13LavCalculator15CalculatorBrain10Operations", "unaryOperation"]
+- ["VV13LavCalculator15CalculatorBrain22PendingBinaryOperation", "Double"]
+- ["VV13LavCalculator15CalculatorBrain22PendingBinaryOperation", "String"]
+- ["VV13LavCalculator15CalculatorBrain22PendingBinaryOperation", "descFunction"]
+- ["VV13LavCalculator15CalculatorBrain22PendingBinaryOperation", "descOperand1"]
+- ["VV13LavCalculator15CalculatorBrain22PendingBinaryOperation", "function"]
+- ["VV13LavCalculator15CalculatorBrain22PendingBinaryOperation", "init"]
+- ["VV13LavCalculator15CalculatorBrain22PendingBinaryOperation", "operand1"]
+- ["VV13LavCalculator15CalculatorBrain22PendingBinaryOperation", "perform"]
+- !private ["Ps8Sequence", "subscript"]
+- ["Ps12SignedNumber", "pi"]
+- ["Ps10Strideable", "pi"]
+- ["SS", "init"]
+- ["Ps16TextOutputStream", "init"]
+- ["Ps20TextOutputStreamable", "init"]
+- ["Ps15_CVarArgAligned", "pi"]
+- ["Ps22_CVarArgPassedAsDouble", "pi"]
+- !private ["Ps35_ExpressibleByBuiltinBooleanLiteral", "_getBuiltinLogicValue"]
+- ["Ps51_ExpressibleByBuiltinExtendedGraphemeClusterLiteral", "init"]
+- ["Ps33_ExpressibleByBuiltinFloatLiteral", "pi"]
+- ["Ps35_ExpressibleByBuiltinIntegerLiteral", "pi"]
+- ["Ps34_ExpressibleByBuiltinStringLiteral", "init"]
+- ["Ps39_ExpressibleByBuiltinUTF16StringLiteral", "init"]
+- ["Ps41_ExpressibleByBuiltinUnicodeScalarLiteral", "init"]
+- ["Ps33_ExpressibleByStringInterpolation", "init"]
+- ["Ps35_HasCustomAnyHashableRepresentation", "init"]
+- !private ["Ps9_Hashable", "_getBuiltinLogicValue"]
+- ["Ps9_Hashable", "init"]
+- ["Ps9_Hashable", "pi"]
+- !private ["Ps10_Indexable", "subscript"]
+- !private ["Ps14_IndexableBase", "subscript"]
+- !private ["Ps21_ObjectiveCBridgeable", "_getBuiltinLogicValue"]
+- ["Ps21_ObjectiveCBridgeable", "init"]
+- ["Ps21_ObjectiveCBridgeable", "pi"]
+- !private ["Ps21_ObjectiveCBridgeable", "subscript"]
+- ["Ps11_Strideable", "pi"]
+depends-nominal:
+- "Ps16AbsoluteValuable"
+- "Ps9AnyObject"
+- "Ps19BinaryFloatingPoint"
+- !private "Sb"
+- "Ps7CVarArg"
+- "V13LavCalculator15CalculatorBrain"
+- !private "Ps10Collection"
+- "Ps10Comparable"
+- "Ps28CustomDebugStringConvertible"
+- "Ps29CustomPlaygroundQuickLookable"
+- "Ps17CustomReflectable"
+- "Ps23CustomStringConvertible"
+- !private "Vs10Dictionary"
+- "Sd"
+- "Ps9Equatable"
+- !private "Ps27ExpressibleByBooleanLiteral"
+- !private "Ps30ExpressibleByDictionaryLiteral"
+- "Ps43ExpressibleByExtendedGraphemeClusterLiteral"
+- "Ps25ExpressibleByFloatLiteral"
+- "Ps27ExpressibleByIntegerLiteral"
+- "Ps26ExpressibleByStringLiteral"
+- "Ps33ExpressibleByUnicodeScalarLiteral"
+- "Ps13FloatingPoint"
+- "Ps8Hashable"
+- "Ps25LosslessStringConvertible"
+- "Ps10MirrorPath"
+- "PSo8NSCoding"
+- "PSo9NSCopying"
+- "PSo16NSMutableCopying"
+- "PSo16NSObjectProtocol"
+- "PSo14NSSecureCoding"
+- "CSo8NSString"
+- "OV13LavCalculator15CalculatorBrain10Operations"
+- "VV13LavCalculator15CalculatorBrain22PendingBinaryOperation"
+- !private "Ps8Sequence"
+- "Ps12SignedNumber"
+- "Ps10Strideable"
+- "SS"
+- "Ps16TextOutputStream"
+- "Ps20TextOutputStreamable"
+- "Ps15_CVarArgAligned"
+- "Ps22_CVarArgPassedAsDouble"
+- !private "Ps35_ExpressibleByBuiltinBooleanLiteral"
+- "Ps51_ExpressibleByBuiltinExtendedGraphemeClusterLiteral"
+- "Ps33_ExpressibleByBuiltinFloatLiteral"
+- "Ps35_ExpressibleByBuiltinIntegerLiteral"
+- "Ps34_ExpressibleByBuiltinStringLiteral"
+- "Ps39_ExpressibleByBuiltinUTF16StringLiteral"
+- "Ps41_ExpressibleByBuiltinUnicodeScalarLiteral"
+- "Ps33_ExpressibleByStringInterpolation"
+- "Ps35_HasCustomAnyHashableRepresentation"
+- "Ps9_Hashable"
+- !private "Ps10_Indexable"
+- !private "Ps14_IndexableBase"
+- "Ps21_ObjectiveCBridgeable"
+- "Ps11_Strideable"
+depends-dynamic-lookup:
+depends-external:
+- "/Applications/Xcode 8.3.2/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/ObjectiveC.apinotesc"
+- "/Applications/Xcode 8.3.2/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/Dispatch.apinotesc"
+- "/Applications/Xcode 8.3.2/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/Metal.apinotesc"
+- "/Applications/Xcode 8.3.2/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/Foundation.apinotesc"
+- "/Applications/Xcode 8.3.2/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/CoreGraphics.apinotesc"
+- "/Applications/Xcode 8.3.2/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/UIKit.apinotesc"
+- "/Applications/Xcode 8.3.2/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/CoreText.apinotesc"
+- "/Applications/Xcode 8.3.2/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/ObjectiveC.swiftmodule"
+- "/Applications/Xcode 8.3.2/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/CoreImage.swiftmodule"
+- "/Applications/Xcode 8.3.2/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/QuartzCore.swiftmodule"
+- "/Applications/Xcode 8.3.2/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/Dispatch.swiftmodule"
+- "/Applications/Xcode 8.3.2/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/Darwin.swiftmodule"
+- "/Applications/Xcode 8.3.2/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/Foundation.swiftmodule"
+- "/Applications/Xcode 8.3.2/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/CoreGraphics.swiftmodule"
+- "/Applications/Xcode 8.3.2/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/Swift.swiftmodule"
+- "/Applications/Xcode 8.3.2/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/UIKit.swiftmodule"
+- "/Applications/Xcode 8.3.2/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/SwiftOnoneSupport.swiftmodule"
+interface-hash: "046b19233872489878538971168836ad"

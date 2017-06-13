@@ -1,0 +1,7 @@
+version: "Apple Swift version 3.0.2 (swiftlang-800.0.63 clang-800.0.42.1)"
+options: "2a4a41227cd23af0149785fb91a4b795"
+build_time: [549967211, 102467000]
+inputs:
+  "/Users/samuelnavamani/Documents/Backup/Projects/SampleProjects/Swift/Standford/Calculator/Calculator/CalculatorBrain.swift": [549956112, 0]
+  "/Users/samuelnavamani/Documents/Backup/Projects/SampleProjects/Swift/Standford/Calculator/Calculator/CalculatorViewController.swift": [549703496, 0]
+  "/Users/samuelnavamani/Documents/Backup/Projects/SampleProjects/Swift/Standford/Calculator/Calculator/AppDelegate.swift": [547544894, 0]
