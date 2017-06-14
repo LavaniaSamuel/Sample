@@ -12,6 +12,7 @@ provides-dynamic-lookup:
 - "secondaryDisplay"
 - "touchClear"
 - "touchDigit"
+- "touchVariable"
 - "viewDidLoad"
 depends-top-level:
 - !private "!="
@@ -80,12 +81,12 @@ depends-member:
 - !private ["Ps7CVarArg", "viewDidLoad"]
 - ["Ps7CVarArg", ""]
 - !private ["V10Calculator15CalculatorBrain", "addUnaryOperation"]
-- !private ["V10Calculator15CalculatorBrain", "clear"]
 - !private ["V10Calculator15CalculatorBrain", "description"]
 - ["V10Calculator15CalculatorBrain", "init"]
 - !private ["V10Calculator15CalculatorBrain", "performOperation"]
 - !private ["V10Calculator15CalculatorBrain", "result"]
 - !private ["V10Calculator15CalculatorBrain", "setOperand"]
+- !private ["V10Calculator15CalculatorBrain", "undo"]
 - ["C10Calculator24CalculatorViewController", "CalculatorBrain"]
 - ["C10Calculator24CalculatorViewController", "Double"]
 - !private ["C10Calculator24CalculatorViewController", "String"]
@@ -102,6 +103,7 @@ depends-member:
 - !private ["C10Calculator24CalculatorViewController", "sqrt"]
 - ["C10Calculator24CalculatorViewController", "touchClear"]
 - ["C10Calculator24CalculatorViewController", "touchDigit"]
+- ["C10Calculator24CalculatorViewController", "touchVariable"]
 - !private ["C10Calculator24CalculatorViewController", "userIsInTheMiddleOfTyping"]
 - ["C10Calculator24CalculatorViewController", "viewDidLoad"]
 - !private ["VSS13CharacterView", "count"]
@@ -293,6 +295,7 @@ depends-member:
 - !private ["CSo8NSObject", "textColor"]
 - ["CSo8NSObject", "touchClear"]
 - ["CSo8NSObject", "touchDigit"]
+- ["CSo8NSObject", "touchVariable"]
 - ["CSo8NSObject", "userIsInTheMiddleOfTyping"]
 - ["CSo8NSObject", "viewDidLoad"]
 - ["PSo16NSObjectProtocol", "CalculatorBrain"]
@@ -425,6 +428,7 @@ depends-member:
 - !private ["CSo11UIResponder", "textColor"]
 - ["CSo11UIResponder", "touchClear"]
 - ["CSo11UIResponder", "touchDigit"]
+- ["CSo11UIResponder", "touchVariable"]
 - ["CSo11UIResponder", "userIsInTheMiddleOfTyping"]
 - ["CSo11UIResponder", "viewDidLoad"]
 - ["PSo30UIResponderStandardEditActions", "CalculatorBrain"]
@@ -490,6 +494,7 @@ depends-member:
 - !private ["CSo16UIViewController", "sqrt"]
 - ["CSo16UIViewController", "touchClear"]
 - ["CSo16UIViewController", "touchDigit"]
+- ["CSo16UIViewController", "touchVariable"]
 - ["CSo16UIViewController", "userIsInTheMiddleOfTyping"]
 - ["CSo16UIViewController", "viewDidLoad"]
 - ["CSo16UIViewController", ""]
@@ -658,4 +663,4 @@ depends-external:
 - "/Applications/Xcode 8.3.2/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Swift.swiftmodule"
 - "/Applications/Xcode 8.3.2/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/UIKit.swiftmodule"
 - "/Applications/Xcode 8.3.2/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/SwiftOnoneSupport.swiftmodule"
-interface-hash: "66301a8cafd02967f1ff9dfd262f32bc"
+interface-hash: "acab2753549178b9bc971e388ee6f568"

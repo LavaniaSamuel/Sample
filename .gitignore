@@ -20,3 +20,12 @@ Stanford/Assignment2/Calculator/build/Calculator.build/Debug-iphonesimulator/Cal
 Stanford/Assignment2/Calculator/build/Debug-iphonesimulator/Calculator.app/Calculator
 *.xcuserstate
 *.dat
+*.xcuserstate
+Stanford/Assignment1/Calculator/build/Calculator.build/Debug-iphonesimulator/Calculator.build/dgph
+*.d
+*.o
+Stanford/Assignment1/Calculator/build/Calculator.build/Debug-iphonesimulator/Calculator.build/Objects-normal/x86_64/AppDelegate~partial.swiftmodule
+*.swiftdeps
+*.LinkFileList
+*.json
+*.swiftmodule

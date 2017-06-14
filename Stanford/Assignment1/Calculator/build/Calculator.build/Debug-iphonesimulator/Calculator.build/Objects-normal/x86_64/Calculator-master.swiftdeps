@@ -1,7 +1,7 @@
 version: "Apple Swift version 3.1 (swiftlang-802.0.53 clang-802.0.42)"
-options: "e42f8bf7a38993f510fa7c7fdd718b42"
-build_time: [550052678, 917137000]
+options: "e4e09bcd1b8a9896209e82c605d5d8ec"
+build_time: [550720715, 488351000]
 inputs:
-  "/Users/samuelnavamani/Documents/Backup/Projects/SampleProjects/Swift/Standford/Calculator/Calculator/CalculatorBrain.swift": [550052437, 0]
-  "/Users/samuelnavamani/Documents/Backup/Projects/SampleProjects/Swift/Standford/Calculator/Calculator/CalculatorViewController.swift": [550052672, 0]
-  "/Users/samuelnavamani/Documents/Backup/Projects/SampleProjects/Swift/Standford/Calculator/Calculator/AppDelegate.swift": [547544894, 0]
+  "/Users/samuelnavamani/Documents/Backup/Projects/SampleProjects/Swift/Github/Sample/Stanford/Assignment1/Calculator/Calculator/CalculatorBrain.swift": !dirty [550226177, 0]
+  "/Users/samuelnavamani/Documents/Backup/Projects/SampleProjects/Swift/Github/Sample/Stanford/Assignment1/Calculator/Calculator/CalculatorViewController.swift": [550225838, 0]
+  "/Users/samuelnavamani/Documents/Backup/Projects/SampleProjects/Swift/Github/Sample/Stanford/Assignment1/Calculator/Calculator/AppDelegate.swift": [547544894, 0]

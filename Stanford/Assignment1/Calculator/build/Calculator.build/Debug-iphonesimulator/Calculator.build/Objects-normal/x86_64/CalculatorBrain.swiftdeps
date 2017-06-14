@@ -14,6 +14,7 @@ depends-top-level:
 - "+"
 - "-"
 - "/"
+- !private "=="
 - "AssignmentPrecedence"
 - "Bool"
 - "BooleanLiteralType"
@@ -48,10 +49,10 @@ depends-member:
 - !private ["V10Calculator15CalculatorBrain", "accumulator"]
 - ["V10Calculator15CalculatorBrain", "addUnaryOperation"]
 - ["V10Calculator15CalculatorBrain", "changeSign"]
-- ["V10Calculator15CalculatorBrain", "clear"]
 - ["V10Calculator15CalculatorBrain", "cos"]
 - !private ["V10Calculator15CalculatorBrain", "descHelper"]
 - ["V10Calculator15CalculatorBrain", "description"]
+- ["V10Calculator15CalculatorBrain", "evaluate"]
 - ["V10Calculator15CalculatorBrain", "init"]
 - !private ["V10Calculator15CalculatorBrain", "operations"]
 - !private ["V10Calculator15CalculatorBrain", "pbo"]
@@ -61,6 +62,9 @@ depends-member:
 - ["V10Calculator15CalculatorBrain", "setOperand"]
 - ["V10Calculator15CalculatorBrain", "sin"]
 - ["V10Calculator15CalculatorBrain", "sqrt"]
+- ["V10Calculator15CalculatorBrain", "undo"]
+- !private ["V10Calculator15CalculatorBrain", "variable"]
+- !private ["V10Calculator15CalculatorBrain", "variableOperations"]
 - !private ["Ps10Collection", "subscript"]
 - !private ["Ps10Comparable", "append"]
 - ["Ps10Comparable", "init"]
@@ -235,4 +239,4 @@ depends-external:
 - "/Applications/Xcode 8.3.2/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Swift.swiftmodule"
 - "/Applications/Xcode 8.3.2/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/UIKit.swiftmodule"
 - "/Applications/Xcode 8.3.2/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/SwiftOnoneSupport.swiftmodule"
-interface-hash: "ff2273b41ab14393021d15e11ae7001d"
+interface-hash: "0653c7d695d104af691a0da2aa9e3fbe"
