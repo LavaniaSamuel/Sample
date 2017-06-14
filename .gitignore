@@ -15,3 +15,8 @@ Stanford/Cassini/build/
 Stanford/FaceIt/build/
 Stanford/LavCalculator/build/
 Stanford/LavCalculator/.DS_Store
+Stanford/Assignment2/Calculator/build/Calculator.build/Debug-iphonesimulator/Calculator.build/dgph
+*.swiftdeps
+Stanford/Assignment2/Calculator/build/Debug-iphonesimulator/Calculator.app/Calculator
+*.xcuserstate
+*.dat
