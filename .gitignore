@@ -9,3 +9,9 @@ Stanford/Assignment2/Calculator/build/Calculator.build/Debug-iphonesimulator/Cal
 *.swiftdeps
 *.o
 *.xcuserstate
+Stanford/Assignment2/Calculator/build/
+Stanford/Assignment1/Calculator/build/
+Stanford/Cassini/build/
+Stanford/FaceIt/build/
+Stanford/LavCalculator/build/
+Stanford/LavCalculator/.DS_Store
