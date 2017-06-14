@@ -15,6 +15,16 @@ class CalculatorViewController : UIViewController {
     
     private var userIsInTheMiddleOfTyping = false
     
+    private var brain: CalculatorBrain = CalculatorBrain()
+    
+    private var variableOperations: Dictionary<String, Double> = [
+        "a": 10,
+        "b": 20
+    ]
+    
+    private var arrowMOperations: Dictionary<String, Double> = [:]
+    private var arrowMTouched = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -59,6 +69,19 @@ class CalculatorViewController : UIViewController {
         }
     }
     
+    @IBAction func touchArrowM(_ sender: UIButton) {
+        arrowMTouched = !arrowMTouched
+        if arrowMTouched {
+            arrowMOperations["M"] = displayValue
+            performEvaluateAndDisplay(using: arrowMOperations)
+        }
+    }
+    
+    @IBAction func touchM(_ sender: UIButton) {
+        if let title = sender.currentTitle {
+            brain.setOperand(title)
+        }
+    }
     var displayValue : Double {
         get {
             return Double(display.text!)!
@@ -68,12 +91,6 @@ class CalculatorViewController : UIViewController {
         }
     }
     
-    private var brain: CalculatorBrain = CalculatorBrain()
-    private var variableOperations: Dictionary<String, Double>? = [
-        "a": 10,
-        "b": 20
-    ]
-    
     @IBAction func performOperation(_ sender: UIButton) {
         if userIsInTheMiddleOfTyping {
             brain.setOperand(displayValue)
@@ -81,11 +98,19 @@ class CalculatorViewController : UIViewController {
         }
         if let mathematicalSymbol = sender.currentTitle {
             brain.setSymbol(mathematicalSymbol)
-            let value = brain.evaluate(using: variableOperations)
-            if let result = value.result {
-                displayValue = result
+            if arrowMTouched {
+                performEvaluateAndDisplay(using: arrowMOperations)
+            } else {
+                performEvaluateAndDisplay(using: variableOperations)
             }
             secondaryDisplay.text = brain.description
+        }
+    }
+    
+    func performEvaluateAndDisplay(using dictVariable: Dictionary<String, Double>) {
+        let value = brain.evaluate(using: dictVariable)
+        if let result = value.result {
+            displayValue = result
         }
     }
 }

@@ -297,6 +297,7 @@
                                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                         <state key="normal" title="→M"/>
                                                         <connections>
+                                                            <action selector="touchArrowM:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TE9-Dp-Sxq"/>
                                                             <action selector="touchClear:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6KA-9L-VLk"/>
                                                         </connections>
                                                     </button>
@@ -305,6 +306,9 @@
                                                         <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                         <state key="normal" title="M"/>
+                                                        <connections>
+                                                            <action selector="touchM:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vVa-oP-GRm"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cgv-a7-3Ip">
                                                         <rect key="frame" x="172.5" y="0.0" width="84.5" height="80.5"/>

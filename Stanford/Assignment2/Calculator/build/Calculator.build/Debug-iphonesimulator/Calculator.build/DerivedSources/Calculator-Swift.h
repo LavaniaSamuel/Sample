@@ -165,8 +165,11 @@ SWIFT_CLASS("_TtC10Calculator24CalculatorViewController")
 - (IBAction)touchDigit:(UIButton * _Nonnull)sender;
 - (IBAction)touchClear:(UIButton * _Nonnull)sender;
 - (IBAction)touchVariable:(UIButton * _Nonnull)sender;
+- (IBAction)touchArrowM:(UIButton * _Nonnull)sender;
+- (IBAction)touchM:(UIButton * _Nonnull)sender;
 @property (nonatomic) double displayValue;
 - (IBAction)performOperation:(UIButton * _Nonnull)sender;
+- (void)performEvaluateAndDisplayUsing:(NSDictionary<NSString *, NSNumber *> * _Nonnull)dictVariable;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
