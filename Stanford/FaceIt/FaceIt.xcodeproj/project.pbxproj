@@ -14,6 +14,7 @@
 		8D4D36EF1EC69A0300E828C9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D4D36EE1EC69A0300E828C9 /* Assets.xcassets */; };
 		8D4D36F21EC69A0300E828C9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D4D36F01EC69A0300E828C9 /* LaunchScreen.storyboard */; };
 		8D4D36FB1EC69AC400E828C9 /* FaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4D36FA1EC69AC400E828C9 /* FaceView.swift */; };
+		8DB7464F1EF5381B0023A24C /* EmotionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB7464E1EF5381B0023A24C /* EmotionsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		8D4D36F11EC69A0300E828C9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8D4D36F31EC69A0300E828C9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D4D36FA1EC69AC400E828C9 /* FaceView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaceView.swift; sourceTree = "<group>"; };
+		8DB7464E1EF5381B0023A24C /* EmotionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmotionsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,10 +60,11 @@
 		8D4D36E61EC69A0300E828C9 /* FaceIt */ = {
 			isa = PBXGroup;
 			children = (
-				8D4D36E91EC69A0300E828C9 /* FaceViewController.swift */,
-				8D4D36EB1EC69A0300E828C9 /* Main.storyboard */,
-				8D4D36FA1EC69AC400E828C9 /* FaceView.swift */,
 				8D2BD6FB1ECB28FC00C29629 /* FacialExpression.swift */,
+				8D4D36E91EC69A0300E828C9 /* FaceViewController.swift */,
+				8D4D36FA1EC69AC400E828C9 /* FaceView.swift */,
+				8DB7464E1EF5381B0023A24C /* EmotionsViewController.swift */,
+				8D4D36EB1EC69A0300E828C9 /* Main.storyboard */,
 				8D4D36F91EC69A2100E828C9 /* Supporting Files */,
 			);
 			path = FaceIt;
@@ -152,6 +155,7 @@
 			files = (
 				8D4D36EA1EC69A0300E828C9 /* FaceViewController.swift in Sources */,
 				8D2BD6FC1ECB28FC00C29629 /* FacialExpression.swift in Sources */,
+				8DB7464F1EF5381B0023A24C /* EmotionsViewController.swift in Sources */,
 				8D4D36E81EC69A0300E828C9 /* AppDelegate.swift in Sources */,
 				8D4D36FB1EC69AC400E828C9 /* FaceView.swift in Sources */,
 			);
