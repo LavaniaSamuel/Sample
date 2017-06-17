@@ -30,3 +30,9 @@ Stanford/Assignment1/Calculator/build/Calculator.build/Debug-iphonesimulator/Cal
 *.json
 *.swiftmodule
 Stanford/Assignment2/Calculator/.DS_Store
+Stanford/Assignment1/Calculator/.DS_Store
+*.hmap
+*.hmap
+*.hmap
+*.hmap
+*.swiftdoc
