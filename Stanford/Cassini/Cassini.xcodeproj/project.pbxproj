@@ -68,10 +68,10 @@
 			isa = PBXGroup;
 			children = (
 				8D90EEF01EE3006000192963 /* AppDelegate.swift */,
+				8D509DC71EE440B800CF06F2 /* CassiniViewController.swift */,
 				8D90EEF21EE3006000192963 /* ImageViewController.swift */,
 				8D90EF021EE3046300192963 /* DemoURL.swift */,
 				8D90EEF41EE3006000192963 /* Main.storyboard */,
-				8D509DC71EE440B800CF06F2 /* CassiniViewController.swift */,
 				8D90EEFC1EE3006000192963 /* Info.plist */,
 				8D509DC61EE43D8800CF06F2 /* Supporting Files */,
 			);

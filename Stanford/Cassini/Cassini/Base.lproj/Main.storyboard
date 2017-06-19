@@ -75,21 +75,28 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="pi1-o8-Xpp">
+                                <rect key="frame" x="169" y="315" width="37" height="37"/>
+                                <color key="color" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5gt-9N-ibp">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="5gt-9N-ibp" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="bN5-fD-eVg"/>
-                            <constraint firstItem="5gt-9N-ibp" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="mKc-JN-s0p"/>
-                            <constraint firstAttribute="trailing" secondItem="5gt-9N-ibp" secondAttribute="trailing" id="owP-uA-rm0"/>
-                            <constraint firstItem="5gt-9N-ibp" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="w8J-Np-cLg"/>
+                            <constraint firstItem="5gt-9N-ibp" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="2fl-KP-YuF"/>
+                            <constraint firstItem="5gt-9N-ibp" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="ByA-ib-UhP"/>
+                            <constraint firstItem="5gt-9N-ibp" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Cjt-Zd-t84"/>
+                            <constraint firstItem="5gt-9N-ibp" firstAttribute="centerX" secondItem="pi1-o8-Xpp" secondAttribute="centerX" id="fen-kX-ZCi"/>
+                            <constraint firstItem="5gt-9N-ibp" firstAttribute="centerY" secondItem="pi1-o8-Xpp" secondAttribute="centerY" id="je6-Un-yGD"/>
+                            <constraint firstAttribute="trailing" secondItem="5gt-9N-ibp" secondAttribute="trailing" id="kOt-tc-HPp"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Jjc-a5-MCi"/>
                     <connections>
                         <outlet property="scrollView" destination="5gt-9N-ibp" id="W3h-qP-Pge"/>
+                        <outlet property="spinner" destination="pi1-o8-Xpp" id="DoP-tb-Uim"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

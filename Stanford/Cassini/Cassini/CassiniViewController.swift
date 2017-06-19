@@ -8,8 +8,25 @@
 
 import UIKit
 
-class CassiniViewController: UIViewController {
+class CassiniViewController: UIViewController, UISplitViewControllerDelegate {
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        self.splitViewController?.delegate = self
+    }
 
+    func splitViewController(
+        _ splitViewController: UISplitViewController,
+        collapseSecondary secondaryViewController: UIViewController,
+        onto primaryViewController: UIViewController
+        ) -> Bool {
+        if primaryViewController.content == self {
+            if let ivc = secondaryViewController.content as? ImageViewController, ivc.imageURL == nil {
+                return true
+            }
+        }
+        return false
+    }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let url = DemoURL.NASA[segue.identifier ?? ""] {
             if let imageVC = (segue.destination.content as? ImageViewController) {
