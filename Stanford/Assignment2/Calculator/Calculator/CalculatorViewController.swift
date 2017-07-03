@@ -22,9 +22,6 @@ class CalculatorViewController : UIViewController {
         "b": 20
     ]
     
-    private var arrowMOperations: Dictionary<String, Double> = [:]
-    private var arrowMTouched = false
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -32,9 +29,6 @@ class CalculatorViewController : UIViewController {
             [weak self] in
             self?.display.textColor = UIColor.green
             return sqrt($0)
-            
-        }, descOperation: {
-            return "✅(\($0))"
         })
     }
     
@@ -69,19 +63,6 @@ class CalculatorViewController : UIViewController {
         }
     }
     
-    @IBAction func touchArrowM(_ sender: UIButton) {
-        arrowMTouched = !arrowMTouched
-        if arrowMTouched {
-            arrowMOperations["M"] = displayValue
-            performEvaluateAndDisplay(using: arrowMOperations)
-        }
-    }
-    
-    @IBAction func touchM(_ sender: UIButton) {
-        if let title = sender.currentTitle {
-            brain.setOperand(title)
-        }
-    }
     var displayValue : Double {
         get {
             return Double(display.text!)!
@@ -98,11 +79,7 @@ class CalculatorViewController : UIViewController {
         }
         if let mathematicalSymbol = sender.currentTitle {
             brain.setSymbol(mathematicalSymbol)
-            if arrowMTouched {
-                performEvaluateAndDisplay(using: arrowMOperations)
-            } else {
-                performEvaluateAndDisplay(using: variableOperations)
-            }
+            performEvaluateAndDisplay(using: variableOperations)
             secondaryDisplay.text = brain.description
         }
     }

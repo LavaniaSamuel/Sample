@@ -36,26 +36,39 @@ class CalculatorBrain {
     
     private var descHelper: String = ""
     
-    private enum Operation {
-        case constant(Double)
-        case unaryOperation((Double) -> Double, (String)->String)
-        case binaryOperation((Double, Double) -> Double, (String, String)->String)
-        case equals
+    private enum Operation: CustomStringConvertible {
+        case constant(Double, String)
+        case unaryOperation((Double) -> Double, String)
+        case binaryOperation((Double, Double) -> Double, String)
+        case equals(String)
+        
+        var description: String {
+            switch self {
+            case .constant(_, let stringValue):
+                return stringValue
+            case .unaryOperation(_, let stringValue):
+                return stringValue
+            case .binaryOperation(_, let stringValue):
+                return stringValue
+            case .equals(let stringValue):
+                return stringValue
+            }
+        }
     }
     
     
     private var operations: Dictionary<String, Operation> = [
-        "π" : Operation.constant(Double.pi),
-        "e" : Operation.constant(M_E),
-        "√" : Operation.unaryOperation(sqrt, {"√(\($0))"}),
-        "COS" : Operation.unaryOperation(cos, {"COS(\($0))"}),
-        "SIN" : Operation.unaryOperation(sin, {"SIN(\($0))"}),
-        "±" : Operation.unaryOperation(changeSign, {"±(\($0))"}),
-        "*" : Operation.binaryOperation({$0 * $1 }, {"\($0)*\($1)"}),
-        "+" : Operation.binaryOperation({$0 + $1 }, {"\($0)+\($1)"}),
-        "-" : Operation.binaryOperation({$0 - $1 }, {"\($0)-\($1)"}),
-        "/" : Operation.binaryOperation({$0 / $1 }, {"\($0)/\($1)"}),
-        "=" : Operation.equals
+        "π" : Operation.constant(Double.pi, "π"),
+        "e" : Operation.constant(M_E, "e"),
+        "√" : Operation.unaryOperation(sqrt, "√"),
+        "COS" : Operation.unaryOperation(cos, "COS"),
+        "SIN" : Operation.unaryOperation(sin, "SIN"),
+        "±" : Operation.unaryOperation(changeSign, "±"),
+        "*" : Operation.binaryOperation({$0 * $1 }, "*"),
+        "+" : Operation.binaryOperation({$0 + $1 }, "+"),
+        "-" : Operation.binaryOperation({$0 - $1 }, "-"),
+        "/" : Operation.binaryOperation({$0 / $1 }, "/"),
+        "=" : Operation.equals("=")
     ]
     
     var result : Double? {
@@ -71,11 +84,8 @@ class CalculatorBrain {
         var operand1: Double
         var function: ((Double,Double)->Double)
         
-        var descOperand1: String
-        var descFunction: ((String,String)->String)
-        
-        func perform(with operand2 : Double, withString operand2String : String)-> (Double, String) {
-            return (function(operand1, operand2), descFunction(descOperand1, operand2String))
+        func perform(with operand2 : Double) -> Double {
+            return (function(operand1, operand2))
         }
     }
     
@@ -84,35 +94,33 @@ class CalculatorBrain {
     {
         if let variableValue = variables {
             for (key, value) in variableValue {
-                if key == variable {
+                if let variableKey = variable, key == variableKey {
                     setOperand(value)
+                    variable = nil
                 }
             }
         }
         
         if let symbol = self.symbol, let operation = operations[symbol] {
-            switch  operation {
-            case .constant(let value):
+            switch operation {
+            case .constant(let value, _):
                 accumulator = value
-                descHelper = "\(accumulator!)"
-            case .unaryOperation(let function, let descFunction):
+                descHelper += operation.description
+            case .unaryOperation(let function, _):
                 if accumulator != nil {
                     accumulator = function(accumulator!)
-                    descHelper = descFunction("\(descHelper)")
+                    descHelper = "\(operation.description)(\(descHelper))"
                 }
-            case .binaryOperation(let function, let descFunction):
+            case .binaryOperation(let function, _):
                 if accumulator != nil {
                     resultIsPending = true
-                    pbo = PendingBinaryOperation(operand1: accumulator!, function: function, descOperand1: descHelper, descFunction: descFunction)
-                    descHelper += ("\(symbol)")
+                    pbo = PendingBinaryOperation(operand1: accumulator!, function: function)
+                    descHelper += ("\(operation.description)")
                     accumulator = nil
-
                 }
             case .equals:
                 if pbo != nil && accumulator != nil {
-                    let tp = pbo!.perform(with: accumulator!, withString: descHelper)
-                    accumulator = tp.0
-                    descHelper = tp.1
+                    accumulator = pbo!.perform(with: accumulator!)
                     resultIsPending = false
                     pbo = nil
                 }
@@ -122,29 +130,34 @@ class CalculatorBrain {
         return (result, resultIsPending, description)
     }
     
-     func setOperand(_ operand: Double) {
+    func setOperand(_ operand: Double) {
         accumulator = operand
-        descHelper = String(format: "%g", operand)
+        if descHelper == "" {
+            descHelper = String(format: "%g", operand)
+        } else {
+            descHelper += String(format: "%g", operand)
+        }
     }
     
-    func addUnaryOperation(with symbol: String, operation: @escaping (Double) -> Double, descOperation: @escaping (String)->String) {
-        operations[symbol] = Operation.unaryOperation(operation, descOperation)
+    func addUnaryOperation(with symbol: String, operation: @escaping (Double) -> Double) {
+        operations[symbol] = Operation.unaryOperation(operation, symbol)
     }
     
-     func undo() {
+    func undo() {
         resultIsPending = false
         descHelper = ""
         accumulator = 0.0
+        variable = nil
     }
     
-     func setOperand(_ named: String) {
+    func setOperand(_ named: String) {
         variable = named
     }
     
     func setSymbol(_ symbol: String) {
         self.symbol = symbol
     }
-
+    
 }
 
 
