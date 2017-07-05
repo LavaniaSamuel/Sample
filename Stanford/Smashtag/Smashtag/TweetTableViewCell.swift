@@ -34,9 +34,20 @@ class TweetTableViewCell: UITableViewCell {
                     }
                 }
             }
-            
         } else {
             tweetProfileImageView?.image = nil
+        }
+        
+        if let tweetCreated = tweet?.created {
+            let formatter = DateFormatter()
+            if Date().timeIntervalSince(tweetCreated) > 24*60*60 {
+                formatter.dateStyle = .short
+            } else {
+                formatter.dateStyle = .short
+            }
+            tweetCreatedLabel?.text = formatter.string(from: tweetCreated)
+        } else {
+            tweetCreatedLabel?.text = nil
         }
     }
 }
