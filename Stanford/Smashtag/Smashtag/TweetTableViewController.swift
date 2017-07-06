@@ -13,7 +13,7 @@ class TweetTableViewController: UITableViewController, UITextFieldDelegate
 {
     private var tweets = [Array<Tweet>]() {
         didSet {
-            print(tweets)
+            //print(tweets)
         }
     }
     
@@ -70,18 +70,18 @@ class TweetTableViewController: UITableViewController, UITextFieldDelegate
     }
     
     
-     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-     let cell = tableView.dequeueReusableCell(withIdentifier: "Tweet", for: indexPath)
-     
-     let tweet = tweets[indexPath.section][indexPath.row]
-     //   cell.textLabel?.text = tweet.text
-     //   cell.detailTextLabel?.text = tweet.user.name
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Tweet", for: indexPath)
+        
+        let tweet = tweets[indexPath.section][indexPath.row]
+        //   cell.textLabel?.text = tweet.text
+        //   cell.detailTextLabel?.text = tweet.user.name
         if let tweetCell = cell as? TweetTableViewCell {
             tweetCell.tweet = tweet
         }
-     
-     return cell
-     }
+        
+        return cell
+    }
     
     @IBOutlet weak var searchTextField: UITextField! {
         didSet {
@@ -89,10 +89,29 @@ class TweetTableViewController: UITableViewController, UITextFieldDelegate
         }
     }
     
+    // MARK: - Text field delegate method
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if searchTextField == textField {
             searchText = searchTextField.text
         }
         return true
+    }
+    
+    // MARK: - Navigation
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let segueIdentifier = segue.identifier, segueIdentifier == "MentionsSegue" {
+            if let mentionVC = segue.destination as? MentionsTableViewController {
+                let tweet = tweets[(tableView.indexPathForSelectedRow?.section)!][(tableView.indexPathForSelectedRow?.row)!]
+                var mentionData = MentionsModel()
+                mentionData.media = tweet.media
+                mentionData.hashtags = tweet.hashtags
+                mentionData.urls = tweet.urls
+                mentionData.userMentions = tweet.userMentions
+                
+                mentionVC.mentionModel = mentionData
+            }
+        }
     }
 }
