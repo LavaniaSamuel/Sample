@@ -28,6 +28,8 @@ class TweetTableViewController: UITableViewController, UITextFieldDelegate
         }
     }
     
+    var searchTextFromMention: String?
+    
     private func twitterRequest() -> Twitter.Request? {
         if let query = searchText, !query.isEmpty {
             return Twitter.Request(search: query, count: 100)
@@ -56,6 +58,9 @@ class TweetTableViewController: UITableViewController, UITextFieldDelegate
         tableView.estimatedRowHeight = tableView.rowHeight
         tableView.rowHeight = UITableViewAutomaticDimension
         
+        if let searchText = searchTextFromMention {
+            self.searchText = searchText
+        }
         //searchText = "#stanford"
     }
     
@@ -104,13 +109,21 @@ class TweetTableViewController: UITableViewController, UITextFieldDelegate
         if let segueIdentifier = segue.identifier, segueIdentifier == "MentionsSegue" {
             if let mentionVC = segue.destination as? MentionsTableViewController {
                 let tweet = tweets[(tableView.indexPathForSelectedRow?.section)!][(tableView.indexPathForSelectedRow?.row)!]
-                var mentionData = MentionsModel()
-                mentionData.media = tweet.media
-                mentionData.hashtags = tweet.hashtags
-                mentionData.urls = tweet.urls
-                mentionData.userMentions = tweet.userMentions
+                var mentionsModel = MentionsModel()
+                if tweet.media.count > 0 {
+                    mentionsModel.allMentions.append(.Media(tweet.media))
+                }
+                if tweet.hashtags.count > 0 {
+                    mentionsModel.allMentions.append(.HashTags(tweet.hashtags))
+                }
+                if tweet.urls.count > 0 {
+                    mentionsModel.allMentions.append(.Urls(tweet.urls))
+                }
+                if tweet.userMentions.count > 0 {
+                    mentionsModel.allMentions.append(.UserMentions(tweet.userMentions))
+                }
                 
-                mentionVC.mentionModel = mentionData
+                mentionVC.mentionsModel = mentionsModel
             }
         }
     }

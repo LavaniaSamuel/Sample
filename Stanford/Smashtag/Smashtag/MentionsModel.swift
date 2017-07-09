@@ -9,39 +9,40 @@
 import Foundation
 import Twitter
 
-struct MentionsModel: CustomStringConvertible
+struct MentionsModel
 {
-    public var media: [MediaItem]? {
-        didSet {
-            if media!.count > 0 {
-                mentionsName?.append("Media")
+    public var allMentions: [Mentions] = []
+    enum Mentions: CustomStringConvertible
+    {
+        case Media([MediaItem])
+        case HashTags([Mention])
+        case Urls([Mention])
+        case UserMentions([Mention])
+        
+        public var count: Int {
+            switch self {
+            case .Media(let mediaItem):
+                return mediaItem.count
+            case .HashTags(let mentionHashTags):
+                return mentionHashTags.count
+            case .Urls(let mentionUrls):
+                return mentionUrls.count
+            case .UserMentions(let mentionedUserMentions):
+                return mentionedUserMentions.count
+            }
+        }
+        
+        public var description: String {
+            switch self {
+            case .Media( _):
+                return "Media"
+            case .HashTags( _):
+                return "HashTags"
+            case .Urls( _):
+                return "Urls"
+            case .UserMentions( _):
+                return "UserMentions"
             }
         }
     }
-    public var hashtags: [Mention]? {
-        didSet {
-            if hashtags!.count > 0 {
-                mentionsName?.append("Hashtags")
-            }
-        }
-    }
-    public var urls: [Mention]? {
-        didSet {
-            if urls!.count > 0 {
-                mentionsName?.append("Urls")
-            }
-        }
-    }
-    public var userMentions: [Mention]? {
-        didSet {
-            if userMentions!.count > 0 {
-                mentionsName?.append("UserMentions")
-            }
-        }
-    }
-    
-    public var description: String { return "hashtags: \(hashtags)\nurls: \(urls)\nuser_mentions: \(userMentions)" + "\nmedia count: \(media?.count)" + "\nmentionsName:\(mentionsName)" }
-    
-    public var mentionsName: [String]? = []
-    
 }

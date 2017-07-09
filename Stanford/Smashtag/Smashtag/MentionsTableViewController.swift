@@ -10,84 +10,107 @@ import UIKit
 
 class MentionsTableViewController: UITableViewController {
     
-    public var mentionModel: MentionsModel?
+    public var mentionsModel = MentionsModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print(mentionModel!)
-        
-
+        print(mentionsModel)
     }
 
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return (mentionModel?.mentionsName?.count)!
+        return mentionsModel.allMentions.count
     }
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return (mentionModel?.mentionsName?[section])!
+        return mentionsModel.allMentions[section].description
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        let mentions = mentionsModel.allMentions[indexPath.section]
+        
+        switch mentions {
+        case .Media(let mediaItem):
+            return tableView.bounds.size.width / CGFloat(mediaItem[indexPath.section].aspectRatio)
+        default:
+            return UITableViewAutomaticDimension
+        }
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let mentions = mentionModel?.mentionsName?[section]
-        
-        switch mentions! {
-        case "Media" :
-            return (mentionModel?.media?.count)!
-        case "Hashtags" :
-            return (mentionModel?.hashtags?.count)!
-        case "Urls" :
-            return (mentionModel?.urls?.count)!
-        case "UserMentions" :
-            return (mentionModel?.userMentions?.count)!
-        default :
-            return 0
-        }
+        return mentionsModel.allMentions[section].count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let mentions = mentionModel?.mentionsName?[indexPath.section]
+        let mentions = mentionsModel.allMentions[indexPath.section]
         
-        switch mentions! {
-        case "Media" :
+        switch mentions {
+        case .Media(let mediaItem) :
             let cell = tableView.dequeueReusableCell(withIdentifier: "MediaCell", for: indexPath)
             if let imageCell = cell as? MentionsImageTableViewCell {
-                imageCell.mediaItem = mentionModel?.media![indexPath.row]
+                imageCell.mediaItem = mediaItem[indexPath.row]
             }
             return cell
-        case "Hashtags" :
+        case .HashTags(let mentions) :
             let cell = tableView.dequeueReusableCell(withIdentifier: "HashtagsCell", for: indexPath)
             if let imageCell = cell as? MentionsTextTableViewCell {
-                imageCell.mentions = mentionModel?.hashtags![indexPath.row]
+                imageCell.mentions = mentions[indexPath.row]
             }
             return cell
-        case "Urls" :
+        case .Urls(let mentions) :
             let cell = tableView.dequeueReusableCell(withIdentifier: "UrlsCell", for: indexPath)
             if let imageCell = cell as? MentionsTextTableViewCell {
-                imageCell.mentions = mentionModel?.urls![indexPath.row]
+                imageCell.mentions = mentions[indexPath.row]
             }
             return cell
-        case "UserMentions" :
+        case .UserMentions(let mentions):
             let cell = tableView.dequeueReusableCell(withIdentifier: "UserMentionsCell", for: indexPath)
             if let imageCell = cell as? MentionsTextTableViewCell {
-                imageCell.mentions = mentionModel?.userMentions![indexPath.row]
+                imageCell.mentions = mentions[indexPath.row]
             }
             return cell
-        default:
-            return UITableViewCell()
+        }
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let mentions = mentionsModel.allMentions[indexPath.section]
+        
+        switch mentions {
+        case .Media(_):
+            performSegue(withIdentifier: "ToImageViewSegue", sender: nil)
+        case .HashTags(_) :
+            performSegue(withIdentifier: "ToMainHashTagSegue", sender: nil)
+        case .UserMentions(_) :
+            performSegue(withIdentifier: "ToMainUserMentionsSegue", sender: nil)
+        case .Urls(let mentions) :
+            if #available(iOS 10.0, *) {
+                UIApplication.shared.open(<#T##url: URL##URL#>, options: <#T##[String : Any]#>, completionHandler: <#T##((Bool) -> Void)?##((Bool) -> Void)?##(Bool) -> Void#>)
+            }
         }
     }
 
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if let segueIdentifier = segue.identifier {
+            switch segueIdentifier {
+            case "ToMainHashTagSegue", "ToMainUserMentionsSegue":
+                if let tweetTableVC = segue.destination as? TweetTableViewController {
+                    let mentions = mentionsModel.allMentions[(tableView.indexPathForSelectedRow?.section)!]
+                    switch mentions {
+                    case .HashTags(let mentionItem), .UserMentions(let mentionItem):
+                        tweetTableVC.searchTextFromMention = mentionItem[(tableView.indexPathForSelectedRow?.row)!].keyword
+                    default:
+                        break
+                    }
+                }
+            default:
+                break
+            }
+        }
     }
-    */
 
 }

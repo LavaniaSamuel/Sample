@@ -84,12 +84,12 @@
 			isa = PBXGroup;
 			children = (
 				8D8C3ED01F02941A00108EB1 /* Main.storyboard */,
-				8DD245BB1F053C4300AA82E7 /* TweetTableViewCell.swift */,
 				8D8C3EDF1F02948600108EB1 /* TweetTableViewController.swift */,
-				8DD245BF1F0D21A100AA82E7 /* MentionsModel.swift */,
+				8DD245BB1F053C4300AA82E7 /* TweetTableViewCell.swift */,
 				8DD245BD1F0D179100AA82E7 /* MentionsTableViewController.swift */,
-				8DD245C31F0E6C7C00AA82E7 /* MentionsImageTableViewCell.swift */,
 				8DD245C11F0E6C6C00AA82E7 /* MentionsTextTableViewCell.swift */,
+				8DD245C31F0E6C7C00AA82E7 /* MentionsImageTableViewCell.swift */,
+				8DD245BF1F0D21A100AA82E7 /* MentionsModel.swift */,
 				8D8C3ED81F02941A00108EB1 /* Info.plist */,
 				8D8C3EDE1F02942700108EB1 /* Supporting Files */,
 			);
