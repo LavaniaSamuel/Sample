@@ -80,14 +80,14 @@ class MentionsTableViewController: UITableViewController {
         switch mentions {
         case .Media(_):
             performSegue(withIdentifier: "ToImageViewSegue", sender: nil)
-        case .HashTags(_) :
-            performSegue(withIdentifier: "ToMainHashTagSegue", sender: nil)
-        case .UserMentions(_) :
-            performSegue(withIdentifier: "ToMainUserMentionsSegue", sender: nil)
         case .Urls(let mentions) :
             if #available(iOS 10.0, *) {
-                UIApplication.shared.open(<#T##url: URL##URL#>, options: <#T##[String : Any]#>, completionHandler: <#T##((Bool) -> Void)?##((Bool) -> Void)?##(Bool) -> Void#>)
+                UIApplication.shared.open(URL(string:mentions[indexPath.row].keyword)!)
+            } else {
+                UIApplication.shared.openURL(URL(string:mentions[indexPath.row].keyword)!)
             }
+        default:
+            break
         }
     }
 
@@ -107,6 +107,17 @@ class MentionsTableViewController: UITableViewController {
                         break
                     }
                 }
+            case "ToImageViewSegue" :
+                if let imageVC = segue.destination as? ImageViewController {
+                    let mentions = mentionsModel.allMentions[(tableView.indexPathForSelectedRow?.section)!]
+                    switch mentions {
+                    case .Media(let mediaItem):
+                        imageVC.imageURL = mediaItem[(tableView.indexPathForSelectedRow?.row)!].url
+                    default:
+                        <#code#>
+                    }
+                }
+                
             default:
                 break
             }
