@@ -114,7 +114,7 @@ class MentionsTableViewController: UITableViewController {
                     case .Media(let mediaItem):
                         imageVC.imageURL = mediaItem[(tableView.indexPathForSelectedRow?.row)!].url
                     default:
-                        <#code#>
+                        break
                     }
                 }
                 
