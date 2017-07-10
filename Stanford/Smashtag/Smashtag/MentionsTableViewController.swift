@@ -78,8 +78,6 @@ class MentionsTableViewController: UITableViewController {
         let mentions = mentionsModel.allMentions[indexPath.section]
         
         switch mentions {
-        case .Media(_):
-            performSegue(withIdentifier: "ToImageViewSegue", sender: nil)
         case .Urls(let mentions) :
             if #available(iOS 10.0, *) {
                 UIApplication.shared.open(URL(string:mentions[indexPath.row].keyword)!)

@@ -238,6 +238,9 @@
                             <constraint firstItem="j3U-xS-4cM" firstAttribute="top" secondItem="XKm-gv-9Yn" secondAttribute="top" id="g7p-eb-LVX"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="scrollView" destination="j3U-xS-4cM" id="kFX-xr-Nz3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Abo-xx-XNK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
