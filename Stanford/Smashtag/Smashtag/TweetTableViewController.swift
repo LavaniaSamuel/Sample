@@ -24,8 +24,16 @@ class TweetTableViewController: UITableViewController, UITextFieldDelegate
             tweets.removeAll()
             tableView.reloadData()
             searchForTweets()
+            save(recentSearch: searchText!)
             self.title = searchText
         }
+    }
+    
+    var rc = RecentSearchModel()
+    
+    private func save(recentSearch: String?) {
+        rc.recentSearch = recentSearch
+        print("Saved recent searches :\(rc.recentSearches)")
     }
     
     var searchTextFromMention: String?

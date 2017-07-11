@@ -12,6 +12,7 @@ import Twitter
 struct MentionsModel
 {
     public var allMentions: [Mentions] = []
+    
     enum Mentions: CustomStringConvertible
     {
         case Media([MediaItem])
