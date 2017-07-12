@@ -25,7 +25,7 @@ class TweetTableViewController: UITableViewController, UITextFieldDelegate
             tableView.reloadData()
             searchForTweets()
             save(recentSearch: searchText!)
-            self.title = searchText
+            self.navigationItem.title = searchText
         }
     }
     
