@@ -1,0 +1,3 @@
+framework module Twitter {
+    header "Twitter-Swift.h"
+}
