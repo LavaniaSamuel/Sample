@@ -11,7 +11,7 @@
         <attribute name="created" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="text" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="unique" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="mentions" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Mentions" inverseName="tweets" inverseEntity="Mentions" syncable="YES"/>
+        <relationship name="mentions" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Mentions" inverseName="tweets" inverseEntity="Mentions" syncable="YES"/>
         <relationship name="tweeter" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="TweetUser" inverseName="tweets" inverseEntity="TweetUser" syncable="YES"/>
     </entity>
     <entity name="TweetUser" representedClassName=".TweetUser" syncable="YES" codeGenerationType="category">
@@ -20,8 +20,8 @@
         <relationship name="tweets" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Tweet" inverseName="tweeter" inverseEntity="Tweet" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Mentions" positionX="493" positionY="99" width="128" height="118"/>
-        <element name="Tweet" positionX="268" positionY="101" width="128" height="120"/>
+        <element name="Mentions" positionX="450" positionY="44" width="128" height="118"/>
+        <element name="Tweet" positionX="268" positionY="101" width="128" height="118"/>
         <element name="TweetUser" positionX="457" positionY="243" width="128" height="90"/>
     </elements>
 </model>

@@ -40,14 +40,29 @@ class RecentSearchTableViewController: UITableViewController {
 
         return cell
     }
+    
+    var accessoryButtonIndexPath: IndexPath?
+    
+    override func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
+        accessoryButtonIndexPath = indexPath
+        self.performSegue(withIdentifier: "ToPopularMentionSegue", sender: self)
+    }
 
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let segueIdentifier = segue.identifier, segueIdentifier == "ToTweetViewSegue" {
-            let tweetVC = segue.destination as? TweetTableViewController
-            tweetVC?.searchTextFromMention = recentSearch.recentSearches![(tableView.indexPathForSelectedRow?.row)!]
+        if let segueIdentifier = segue.identifier {
+            if segueIdentifier == "ToTweetViewSegue" {
+                let tweetVC = segue.destination as? TweetTableViewController
+                tweetVC?.searchTextFromMention = recentSearch.recentSearches![(tableView.indexPathForSelectedRow?.row)!]
+            } else if segueIdentifier == "ToPopularMentionSegue" {
+                let popularMentionVC = segue.destination as? PopularMentionTableViewController
+                if let selectedIndex = accessoryButtonIndexPath {
+                popularMentionVC?.searchTerm = recentSearch.recentSearches![selectedIndex.row]
+                }
+            }
+            
         }
     }
 

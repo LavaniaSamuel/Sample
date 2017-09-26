@@ -47,6 +47,14 @@ class SmashTweetTableViewController: TweetTableViewController
                 let mentionsRequest: NSFetchRequest<Mentions> = Mentions.fetchRequest()
                 if let mentionsCount = try? context.fetch(mentionsRequest).count {
                     print("\(mentionsCount) mentions count")
+                    if let mentions = try? context.fetch(mentionsRequest) {
+                        for mention in mentions {
+                            print("count:\(mention.count)")
+                            print("keyword:\(String(describing: mention.keyword))")
+                            print("searchterm:\(String(describing: mention.searchterm))")
+                            print("type:\(String(describing: mention.type))")
+                        }
+                    }
                 }
             }
         }

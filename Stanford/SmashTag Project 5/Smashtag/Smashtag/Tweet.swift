@@ -19,7 +19,7 @@ class Tweet: NSManagedObject
         
         do {
             let matches = try context.fetch(request)
-            if matches.count > 1 {
+            if matches.count > 0 {
                 assert(matches.count == 1, "Tweet.findOrCreateTweet -- database inconsistency")
                 return matches[0]
             }
@@ -40,9 +40,8 @@ class Tweet: NSManagedObject
         
         for (type, mentions) in twitterMentions {
             for mention in mentions {
-                if let newMention = try? Mentions.findOrCreateMentions(matching: mention, for: searchTerm, with: type, in: context), let newKeyword = newMention.keyword, let newType = newMention.type {
-                    tweet.addToMentions(newMention)
-                    _ = try? Mentions.checkMentions(for: tweet, with:mention, withKey:newKeyword, andType: newType, andSearchTerm: searchTerm, in: context)
+                if let newMentions = try? Mentions.findOrCreateMentions(matching: mention, for: searchTerm, with: type, in: context) {
+                    _ = try? Mentions.updateCount(for: newMentions, withTwitter: mention, andSearchTerm: searchTerm, in: context)
                 }
             }
         }

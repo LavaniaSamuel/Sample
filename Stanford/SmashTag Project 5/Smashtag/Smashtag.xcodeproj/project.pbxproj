@@ -28,6 +28,7 @@
 		D874F4811F5803C500C3308F /* Smash.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D874F47F1F5803C500C3308F /* Smash.xcdatamodeld */; };
 		D874F4841F58CFCE00C3308F /* Tweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = D874F4831F58CFCE00C3308F /* Tweet.swift */; };
 		D874F4861F58CFE300C3308F /* TweetUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = D874F4851F58CFE300C3308F /* TweetUser.swift */; };
+		D8BB91581F71043C0041E605 /* PopularMentionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8BB91571F71043C0041E605 /* PopularMentionTableViewController.swift */; };
 		D8E4C13F1F6F7AD4005FEF1B /* Mentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E4C13E1F6F7AD4005FEF1B /* Mentions.swift */; };
 /* End PBXBuildFile section */
 
@@ -68,6 +69,7 @@
 		D874F4801F5803C500C3308F /* Smash.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Smash.xcdatamodel; sourceTree = "<group>"; };
 		D874F4831F58CFCE00C3308F /* Tweet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tweet.swift; sourceTree = "<group>"; };
 		D874F4851F58CFE300C3308F /* TweetUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetUser.swift; sourceTree = "<group>"; };
+		D8BB91571F71043C0041E605 /* PopularMentionTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopularMentionTableViewController.swift; sourceTree = "<group>"; };
 		D8E4C13E1F6F7AD4005FEF1B /* Mentions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mentions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -116,8 +118,9 @@
 				8DD245C31F0E6C7C00AA82E7 /* MentionsImageTableViewCell.swift */,
 				8DD245BF1F0D21A100AA82E7 /* MentionsModel.swift */,
 				8DC063411F12711D0080CABD /* ImageViewController.swift */,
-				8DC063431F1505A20080CABD /* RecentSearchTableViewController.swift */,
 				8DC063451F1505D00080CABD /* RecentSearchModel.swift */,
+				8DC063431F1505A20080CABD /* RecentSearchTableViewController.swift */,
+				D8BB91571F71043C0041E605 /* PopularMentionTableViewController.swift */,
 				8D8C3ED81F02941A00108EB1 /* Info.plist */,
 				8D8C3EDE1F02942700108EB1 /* Supporting Files */,
 			);
@@ -229,6 +232,7 @@
 				D874F4811F5803C500C3308F /* Smash.xcdatamodeld in Sources */,
 				8DC063441F1505A20080CABD /* RecentSearchTableViewController.swift in Sources */,
 				8DD245C41F0E6C7C00AA82E7 /* MentionsImageTableViewCell.swift in Sources */,
+				D8BB91581F71043C0041E605 /* PopularMentionTableViewController.swift in Sources */,
 				D8E4C13F1F6F7AD4005FEF1B /* Mentions.swift in Sources */,
 				8D8C3EE01F02948600108EB1 /* TweetTableViewController.swift in Sources */,
 				8DC063421F12711D0080CABD /* ImageViewController.swift in Sources */,
